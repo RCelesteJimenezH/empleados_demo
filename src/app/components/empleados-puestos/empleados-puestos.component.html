@@ -1,0 +1,12 @@
+<p>Total de Empleados {{ totalEmpleadosPuestos }}</p>
+<div class="empleados-puestos-table">
+  <app-crud-table
+    [data]="empleadosPuestos"
+    [columns]="tableColumns"
+    [title]="'Empleados y Puestos'"
+    [config]="tableConfig"
+    (delete)="deleteEmpleadoPuesto($event)"
+    (edit)="editEmpleadoPuesto($event)"
+    [caseId]="caseId"
+  ></app-crud-table>
+</div>

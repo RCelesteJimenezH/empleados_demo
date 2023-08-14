@@ -1,0 +1,87 @@
+:host {
+    display: block;
+    margin-bottom: 15px;
+    /* Espacio entre campos */
+    padding: 10px;
+    /* Espacio interno en cada campo */
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+
+.mat-select {
+    width: 100%;
+}
+
+.mat-datepicker-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.errorMessage {
+    color: red;
+    font-size:small;
+    margin-bottom: 5px;
+}
+
+/* dynamic-form.component.scss */
+
+/* Estilos para el formulario en general */
+.example-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Estilos para los campos de entrada */
+.mat-form-field {
+    margin-bottom: 15px;
+    width: calc(50% - 8px);
+    /* Dividir el ancho en dos columnas con margen */
+}
+
+/* Estilos para el campo de contraseña */
+.mat-form-field.password-field {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el icono de visibilidad de contraseña */
+.mat-icon-button {
+    padding: 0;
+    margin-left: -30px;
+}
+
+/* Estilos para el campo de cantidad */
+.mat-form-field.amount-field {
+    float: right;
+}
+
+/* Alineación del texto a la derecha en el campo de cantidad */
+.example-right-align {
+    text-align: right;
+}
+
+/* Ocultar los botones de incremento/decremento en el campo de cantidad */
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    appearance: textfield;
+}
+
+.form-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para los campos del formulario */
+.example-form-field {
+    width: 100%;
+}
+

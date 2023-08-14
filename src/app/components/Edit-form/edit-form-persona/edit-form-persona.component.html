@@ -1,0 +1,32 @@
+<div>
+    <form [formGroup]="personaForm" (ngSubmit)="saveChanges()" class="form-container">
+        <div class="example-container">
+            <mat-form-field class="example-form-field">
+                <mat-label>ID</mat-label>
+                <input matInput [value]="data.persona.id" disabled>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre">
+                <mat-error *ngIf="personaForm.get('nombre')?.hasError('required')">El nombre es requerido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+                <mat-label>Apellido</mat-label>
+                <input matInput formControlName="apellido">
+                <mat-error *ngIf="personaForm.get('apellido')?.hasError('required')">El apellido es requerido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="personaForm.get('fechaNacimiento')?.hasError('required')">La fecha de nacimiento es requerida</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-row">
+            <button mat-button (click)="onCancel()" color="warn">Cancelar</button>
+            <button mat-raised-button color="primary" [disabled]="!personaForm.valid" type="submit"
+                (click)="onSave()">Guardar</button>
+        </div>
+    </form>
+</div>

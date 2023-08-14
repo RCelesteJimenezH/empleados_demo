@@ -1,0 +1,15 @@
+
+<p>Total de Personas {{ totalPersonas }}</p>
+
+<div class="personas-table">
+  <app-crud-table
+    [data]="personas"
+    [columns]="tableColumns"
+    [title]="'Personas'"
+    [config]="tableConfig"
+    (select)="onSelect($event)"
+    (delete)="deletePersona($event)"
+    (edit)="editPersona($event)"
+    [caseId]="caseId"
+  ></app-crud-table>
+</div>

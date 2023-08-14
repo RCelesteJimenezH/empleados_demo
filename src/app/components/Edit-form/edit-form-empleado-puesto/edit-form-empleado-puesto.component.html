@@ -1,0 +1,29 @@
+<div>
+    <form [formGroup]="empleadoPuestoForm" (ngSubmit)="saveChanges()" class="form-container">
+        <div class="example-container">
+            <mat-form-field class="example-form-field">
+                <mat-label>ID</mat-label>
+                <input matInput [value]="data.empleadoPuesto.id" disabled>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+                <mat-label>Persona</mat-label>
+                <mat-select formControlName="personaId">
+                    <mat-option *ngFor="let persona of personas" [value]="persona.id">{{ persona.id }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="empleadoPuestoForm.get('personaId')?.hasError('required')">La persona es requerida</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+                <mat-label>Puesto</mat-label>
+                <mat-select formControlName="puestoNombre">
+                    <mat-option *ngFor="let puesto of puestos" [value]="puesto.nombre">{{ puesto.nombre }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="empleadoPuestoForm.get('puestoNombre')?.hasError('required')">El puesto es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-row">
+            <button mat-button (click)="onCancel()" color="warn">Cancelar</button>
+            <button mat-raised-button color="primary" [disabled]="!empleadoPuestoForm.valid" type="submit"
+                (click)="onSave()">Guardar</button>
+        </div>
+    </form>
+</div>

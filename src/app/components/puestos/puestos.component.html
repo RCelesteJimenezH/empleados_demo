@@ -1,0 +1,15 @@
+
+<p>Total de Puestos: {{ totalPuestos }}</p>
+
+<div class="puestos-table">
+  <app-crud-table
+    [data]="puestos"
+    [columns]="tableColumns"
+    [title]="'Puestos'"
+    [config]="tableConfig"
+    (select)="onSelect($event)"
+    (delete)="deletePuesto($event)"
+    (edit)="editPuesto($event)"
+    [caseId]="caseId"
+  ></app-crud-table>
+</div>
